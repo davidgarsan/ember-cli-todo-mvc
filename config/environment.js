@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'todo-mvc',
+    modulePrefix: 'ember-cli-todo-mvc',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
