@@ -11,11 +11,15 @@ export default Ember.Component.extend({
         submitTodo() {
             let todo = this.get('todo');
             if (todo.get('title') === "") {
-                todo.deleteRecord();
+                this.sendAction('deleteTodo', todo);
             } else {
-                this.sendAction('updateTodo', this.get('todo'));
+                this.sendAction('updateTodo',todo);
             }
             this.set('editing', false);
+        },
+        deleteTodo() {
+            let todo = this.get('todo');
+            this.sendAction('deleteTodo', todo);
         }
     }
 });

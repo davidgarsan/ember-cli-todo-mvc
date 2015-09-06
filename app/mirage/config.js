@@ -1,7 +1,11 @@
 export default function() {
     this.get('/todos');
     this.post('/todos');
-    this.put('/todos/:id');
+    this.patch('/todos/:id', function(db, request) {
+        var attrs = JSON.parse(request.requestBody);
+        db.todos.update(attrs.todo.id, attrs.todo);
+        return {todo: attrs.todo};
+    });
     this.del('/todos/:id');
 
   // These comments are here to help you get started. Feel free to delete them.
