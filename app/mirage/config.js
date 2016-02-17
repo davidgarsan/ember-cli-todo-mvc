@@ -1,4 +1,5 @@
 export default function() {
+    /*jshint unused: true*/
     this.get('/todos', function(db, request) {
         return {
             data: db.todos.map(attrs => (
